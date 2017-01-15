@@ -59,7 +59,7 @@ const data = [
 const FullNameCell = ({ data }) => <span>{data[0]} {data[1]}</span>;
 const EmailCell = ({ data }) => <a href={`mailto:${data}`}>{data}</a>;
 
-const Demo = (): Element<*> => (
+const Demo = () => (
   <Table
     className="table"
     data={data}
@@ -106,7 +106,7 @@ export default Demo;
   tdClassName=""
   thClassName=""
 />
-  {/* columns *}
+  {/* columns */}
 </Table>
 ```
 
@@ -120,9 +120,9 @@ const data = [
     key2: [1, 2, 3],
     key3: {
     	key4: true,
-        key5: {
-        	key6: 'value 2'
-        }
+      key5: {
+        key6: 'value 2'
+      }
     }
   }
 ];
@@ -133,7 +133,7 @@ const data = [
 ```
 
 ### Columns
-You have to specify each column you want to show with `<Column />` component. For example, you can create a table for this data like this:
+You have to specify each column that you want to show with `<Column />` component. For example, you can create a table for this data like this:
 
 ```js
 const data = [
@@ -234,6 +234,7 @@ const FullNameCell = ({ data }) => <span>{data[0]} {data[1]}</span>;
   <Column
     header="Full Name"
     field={['firstName', 'lastName']}
+    cell={<FullNameCell />}
   />
   <Column
     header="Email"
@@ -325,7 +326,7 @@ To suggest a feature, please open an issue if does not already exist. If you wan
 
 * Fork this repo.
 * Make sure `yarn` installed in your computer.
-* Implement your feature. (you can use `yarn start` command to have hot-reload enable dev server.)
+* Implement your feature. (you can use `yarn start` command to have hot-reload enabled dev server.)
 * Check your code via `yarn run lint`
 * Add tests to cover your code.
 * Run all tests to ensure that they pass via `yarn run test`
