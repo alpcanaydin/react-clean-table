@@ -9,11 +9,25 @@ import type { HeaderItemPropsType } from './HeaderItem';
 
 type TablePropsType = {
   data: Array<*>,
+  theadClassName?: string,
+  tbodyClassName?: string,
+  trClassName?: string,
+  tdClassName?: string,
+  thClassName?: string,
   children?: Array<Element<Column>> | Element<Column>
 };
 
 const Table = (props: TablePropsType): Element<*> => {
-  const { data, children, ...otherProps } = props;
+  const {
+    data,
+    theadClassName,
+    tbodyClassName,
+    trClassName,
+    tdClassName,
+    thClassName,
+    children,
+    ...otherProps
+  } = props;
   let columns;
 
   if (!children) {
@@ -31,8 +45,19 @@ const Table = (props: TablePropsType): Element<*> => {
 
   return (
     <table {...otherProps}>
-      <Header items={headerData} />
-      <Body data={data} columns={columns} />
+      <Header
+        items={headerData}
+        theadClassName={theadClassName}
+        trClassName={trClassName}
+        thClassName={thClassName}
+      />
+      <Body
+        data={data}
+        columns={columns}
+        tbodyClassName={tbodyClassName}
+        trClassName={trClassName}
+        tdClassName={tdClassName}
+      />
     </table>
   );
 };
@@ -41,10 +66,15 @@ Table.propTypes = {
   /* eslint-disable react/forbid-prop-types */
   data: PropTypes.array.isRequired,
   /* eslint-enable */
+  theadClassName: PropTypes.string,
+  tbodyClassName: PropTypes.string,
+  trClassName: PropTypes.string,
+  tdClassName: PropTypes.string,
+  thClassName: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element)
-  ]).isRequired
+  ])
 };
 
 export default Table;

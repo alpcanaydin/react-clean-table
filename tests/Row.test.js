@@ -13,11 +13,46 @@ describe('<Row />', () => {
     };
 
     const columns = [
-      <Column field="key1" />
+      <Column
+        field="key1"
+        header="Simple Header"
+      />
     ];
 
     const wrapper = shallow(<Row data={data} columns={columns} />);
     expect(wrapper.find('tr').length).toEqual(1);
+  });
+
+  it('passes trClassName to <tr> element', () => {
+    const data = {
+      key1: 'value 1'
+    };
+
+    const columns = [
+      <Column
+        field="key1"
+        header="Simple Header"
+      />
+    ];
+
+    const wrapper = shallow(<Row data={data} columns={columns} trClassName="trClass" />);
+    expect(wrapper.find('tr').hasClass('trClass')).toBe(true);
+  });
+
+  it('passes tdClassName to <td> elements', () => {
+    const data = {
+      key1: 'value 1'
+    };
+
+    const columns = [
+      <Column
+        field="key1"
+        header="Simple Header"
+      />
+    ];
+
+    const wrapper = shallow(<Row data={data} columns={columns} tdClassName="tdClass" />);
+    expect(wrapper.find('td').get(0).props.className).toEqual('tdClass');
   });
 
   it('renders <td> element n times according to <Column /> components', () => {
@@ -28,9 +63,18 @@ describe('<Row />', () => {
     };
 
     const columns = [
-      <Column field="key1" />,
-      <Column field="key2" />,
-      <Column field="key3" />
+      <Column
+        field="key1"
+        header="Simple Header"
+      />,
+      <Column
+        field="key2"
+        header="Simple Header 2"
+      />,
+      <Column
+        field="key3"
+        header="Simple Header 3"
+      />
     ];
 
     const wrapper = shallow(<Row data={data} columns={columns} />);
@@ -43,7 +87,10 @@ describe('<Row />', () => {
     };
 
     const columns = [
-      <Column field="key1" />
+      <Column
+        field="key1"
+        header="Simple Header"
+      />
     ];
 
     const wrapper = shallow(<Row data={data} columns={columns} />);
@@ -58,7 +105,11 @@ describe('<Row />', () => {
     const CustomCell = (): Element<*> => <span>Custom Cell</span>;
 
     const columns = [
-      <Column field="key1" cell={<CustomCell />} />
+      <Column
+        field="key1"
+        header="Simple Header"
+        cell={<CustomCell />}
+      />
     ];
 
     const wrapper = shallow(<Row data={data} columns={columns} />);
@@ -73,7 +124,11 @@ describe('<Row />', () => {
     const CustomCell = (): Element<*> => <span>Custom Cell</span>;
 
     const columns = [
-      <Column field="key1" cell={<CustomCell />} />
+      <Column
+        field="key1"
+        header="Simple Header"
+        cell={<CustomCell />}
+      />
     ];
 
     const wrapper = shallow(<Row data={data} columns={columns} />);
@@ -90,7 +145,11 @@ describe('<Row />', () => {
     const CustomCell = (): Element<*> => <span>Custom Cell</span>;
 
     const columns = [
-      <Column field={['key1', 'key3']} cell={<CustomCell />} />
+      <Column
+        field={['key1', 'key3']}
+        header="Simple Header"
+        cell={<CustomCell />}
+      />
     ];
 
     const wrapper = shallow(<Row data={data} columns={columns} />);
@@ -105,7 +164,11 @@ describe('<Row />', () => {
     const CustomCell = (): Element<*> => <span>Custom Cell</span>;
 
     const columns = [
-      <Column field="key1" cell={<CustomCell prop1="propValue" />} />
+      <Column
+        field="key1"
+        header="Simple Header"
+        cell={<CustomCell prop1="propValue" />}
+      />
     ];
 
     const wrapper = shallow(<Row data={data} columns={columns} />);

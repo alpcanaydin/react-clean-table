@@ -16,6 +16,23 @@ describe('<Header />', () => {
     expect(wrapper.find('tr').length).toEqual(1);
   });
 
+  it('passes classes to proper elements', () => {
+    const items = [{
+      title: 'Simple Header'
+    }];
+
+    const wrapper = shallow(
+      <Header
+        items={items}
+        theadClassName="theadClass"
+        trClassName="trClass"
+      />
+    );
+
+    expect(wrapper.find('thead').hasClass('theadClass')).toBe(true);
+    expect(wrapper.find('tr').hasClass('trClass')).toBe(true);
+  });
+
   it('renders <HeaderItem/> components', () => {
     const items = [
       {

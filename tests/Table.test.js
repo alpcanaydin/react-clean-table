@@ -78,6 +78,36 @@ describe('<Table />', () => {
     expect(wrapper.find(Header).length).toEqual(1);
   });
 
+  it('passes related classes to <Header /> component', () => {
+    const data = [
+      {
+        key1: 'value 1',
+        key2: 'value 2'
+      },
+      {
+        key1: 'value 3',
+        key2: 'value 4'
+      }
+    ];
+
+    const table = (
+      <Table
+        data={data}
+        theadClassName="theadClass"
+        trClassName="trClass"
+        thClassName="thClass"
+      >
+        <Column field="key1" />
+        <Column field="key2" />
+      </Table>
+    );
+
+    const wrapper = shallow(table);
+    expect(wrapper.find(Header).prop('theadClassName')).toEqual('theadClass');
+    expect(wrapper.find(Header).prop('trClassName')).toEqual('trClass');
+    expect(wrapper.find(Header).prop('thClassName')).toEqual('thClass');
+  });
+
   it('renders <Body /> component', () => {
     const data = [
       {
@@ -99,6 +129,36 @@ describe('<Table />', () => {
 
     const wrapper = shallow(table);
     expect(wrapper.find(Body).length).toEqual(1);
+  });
+
+  it('passes related classes to <Body /> component', () => {
+    const data = [
+      {
+        key1: 'value 1',
+        key2: 'value 2'
+      },
+      {
+        key1: 'value 3',
+        key2: 'value 4'
+      }
+    ];
+
+    const table = (
+      <Table
+        data={data}
+        tbodyClassName="tbodyClass"
+        trClassName="trClass"
+        tdClassName="tdClass"
+      >
+        <Column field="key1" />
+        <Column field="key2" />
+      </Table>
+    );
+
+    const wrapper = shallow(table);
+    expect(wrapper.find(Body).prop('tbodyClassName')).toEqual('tbodyClass');
+    expect(wrapper.find(Body).prop('trClassName')).toEqual('trClass');
+    expect(wrapper.find(Body).prop('tdClassName')).toEqual('tdClass');
   });
 
   it('converts children to empty array if not children given.', () => {

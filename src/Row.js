@@ -9,11 +9,18 @@ import PureCell from './PureCell';
 
 type RowPropsType = {
   data: Object,
-  columns: Array<Element<Column>>
+  columns: Array<Element<Column>>,
+  trClassName?: string,
+  tdClassName?: string
 };
 
 const Row = (props: RowPropsType): Element<*> => {
-  const { data, columns } = props;
+  const {
+    data,
+    columns,
+    trClassName,
+    tdClassName
+  } = props;
 
   const cells = React.Children.map(
     columns,
@@ -27,9 +34,9 @@ const Row = (props: RowPropsType): Element<*> => {
   );
 
   return (
-    <tr>
+    <tr className={trClassName}>
       {cells.map((cell: Element<*>, key: number): Element<*> =>
-        <td key={key}>
+        <td key={key} className={tdClassName}>
           {cell}
         </td>
       )}
@@ -41,7 +48,9 @@ Row.propTypes = {
   /* eslint-disable react/forbid-prop-types */
   data: PropTypes.object.isRequired,
   /* eslint-enable */
-  columns: PropTypes.arrayOf(PropTypes.element).isRequired
+  columns: PropTypes.arrayOf(PropTypes.element).isRequired,
+  trClassName: PropTypes.string,
+  tdClassName: PropTypes.string
 };
 
 export default Row;

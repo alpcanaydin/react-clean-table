@@ -1,14 +1,8 @@
 /* @flow */
 
 export const stringToObject = (object: Object, notation: string): any => {
-  const arr = notation.split('.');
-  let result = object;
-
-  while (arr.length) {
-    result = result[arr.shift()];
-  }
-
-  return result;
+  const reducer = (accumulator: any, currentValue: any): any => accumulator[currentValue];
+  return notation.split('.').reduce(reducer, object);
 };
 
 export const cellDataGenerator = (data: Object, fields?: string | Array<string>): any => {

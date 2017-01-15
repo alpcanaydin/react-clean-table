@@ -7,20 +7,29 @@ import type { HeaderItemPropsType } from './HeaderItem';
 
 export type HeaderType = Array<HeaderItemPropsType>;
 export type HeaderPropsType = {
-  items: HeaderType
+  items: HeaderType,
+  theadClassName?: string,
+  trClassName?: string,
+  thClassName?: string
 };
 
 const Header = (props: HeaderPropsType): Element<*> => {
-  const { items } = props;
+  const {
+    items,
+    theadClassName,
+    trClassName,
+    thClassName
+  } = props;
 
   return (
-    <thead>
-      <tr>
+    <thead className={theadClassName}>
+      <tr className={trClassName}>
         {items.map((item: HeaderItemPropsType, key: number): Element<*> =>
           <HeaderItem
             key={key}
             title={item.title}
             size={item.size}
+            thClassName={thClassName}
           />
         ) }
       </tr>
@@ -30,12 +39,15 @@ const Header = (props: HeaderPropsType): Element<*> => {
 
 Header.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     size: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number
     ])
-  })).isRequired
+  })),
+  theadClassName: PropTypes.string,
+  trClassName: PropTypes.string,
+  thClassName: PropTypes.string
 };
 
 export default Header;
