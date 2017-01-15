@@ -1,6 +1,6 @@
 {
   "name": "react-clean-table",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Clean, easy customizable table component for React.",
   "main": "lib/index.js",
   "module": "es/index.js",
