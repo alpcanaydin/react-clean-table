@@ -1,9 +1,4 @@
-import React from 'react'
+/* @flow */
 
-export default React.createClass({
-  render() {
-    return <div>
-      <h2>Welcome to React components</h2>
-    </div>
-  }
-})
+export { default as Table } from './Table.js';
+export { default as Column } from './Column.js';

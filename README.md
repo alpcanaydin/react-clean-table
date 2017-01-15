@@ -1,16 +1,26 @@
 # react-clean-table
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+[![Travis][build-badge]][build] [![npm package][npm-badge]][npm] [![Coveralls][coveralls-badge]][coveralls]
 
-Describe react-clean-table here.
+**react-clean-table** is an easy to configure, full customizable table component for React.
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+* [Installation](#installation)
+* [Quick Demo](#quick-demo)
+* [Usage](#usage)
+* [Contributing](#contributing)
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+> Documentation will be added soon...
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+## Installation
+## Quick Demo
+## Usage
+## Contributing
+
+[build-badge]: https://img.shields.io/travis/alpcanaydin/react-clean-table/master.png?style=flat-square
+[build]: https://travis-ci.org/alpcanaydin/react-clean-table
+
+[npm-badge]: https://img.shields.io/npm/v/react-clean-table.png?style=flat-square
+[npm]: https://www.npmjs.org/package/react-clean-table
+
+[coveralls-badge]: https://img.shields.io/coveralls/alpcanaydin/react-clean-table/master.png?style=flat-square
+[coveralls]: https://coveralls.io/github/alpcanaydin/react-clean-table

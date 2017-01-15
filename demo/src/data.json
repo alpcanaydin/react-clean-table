@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "firstName": "Tillman",
+    "lastName": "Franklin",
+    "company": "Quarx",
+    "username": "tillmanfranklin",
+    "email": "tillman@quarx.me"
+  },
+  {
+    "id": 2,
+    "firstName": "Maritza",
+    "lastName": "Gamble",
+    "company": "Rooforia",
+    "username": "maritzagamble",
+    "email": "maritza@rooforia.com"
+  },
+  {
+    "id": 3,
+    "firstName": "Hudson",
+    "lastName": "Ramirez",
+    "company": "Qot",
+    "username": "hudsonramirez",
+    "email": "hudson@qot.net"
+  },
+  {
+    "id": 4,
+    "firstName": "Janna",
+    "lastName": "Mcdonald",
+    "company": "Steelfab",
+    "username": "jannamcdonald",
+    "email": "janna@steelfab.info"
+  },
+  {
+    "id": 5,
+    "firstName": "Potts",
+    "lastName": "Mercado",
+    "company": "Comveyor",
+    "username": "pottsmercado",
+    "email": "potts@comveyor.biz"
+  },
+  {
+    "id": 6,
+    "firstName": "Benita",
+    "lastName": "Lawrence",
+    "company": "Assistix",
+    "username": "benitalawrence",
+    "email": "benita@assistix.co.uk"
+  },
+  {
+    "id": 7,
+    "firstName": "Dixie",
+    "lastName": "Rush",
+    "company": "Inquala",
+    "username": "dixierush",
+    "email": "dixie@inquala.io"
+  },
+  {
+    "id": 8,
+    "firstName": "Stewart",
+    "lastName": "Avila",
+    "company": "Geekus",
+    "username": "stewartavila",
+    "email": "stewart@geekus.ca"
+  },
+  {
+    "id": 9,
+    "firstName": "Gabriela",
+    "lastName": "Garner",
+    "company": "Recognia",
+    "username": "gabrielagarner",
+    "email": "gabriela@recognia.name"
+  },
+  {
+    "id": 10,
+    "firstName": "Branch",
+    "lastName": "Patton",
+    "company": "Asimiline",
+    "username": "branchpatton",
+    "email": "branch@asimiline.us"
+  }
+]

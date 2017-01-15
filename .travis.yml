@@ -11,6 +11,10 @@ cache:
 before_install:
   - npm install codecov.io coveralls
 
+script:
+  - npm run lint
+  - npm run test:coverage
+
 after_success:
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js

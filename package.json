@@ -1,7 +1,7 @@
 {
   "name": "react-clean-table",
   "version": "1.0.0",
-  "description": "react-clean-table React component",
+  "description": "Clean, easy customizable table component for React.",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -11,6 +11,7 @@
     "umd"
   ],
   "scripts": {
+    "lint": "eslint src && flow check",
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && npm clean-demo",
     "start": "nwb serve-react-demo",
@@ -23,15 +24,36 @@
     "react": ""
   },
   "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "enzyme": "^2.7.0",
+    "eslint": "^3.12.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-flowtype": "^2.29.2",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "flow-bin": "^0.37.4",
     "nwb": "0.14.x",
     "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2"
   },
-  "author": "",
-  "homepage": "",
+  "author": "Alpcan Aydın <alpcan@alpcanaydin.com>",
+  "homepage": "https://www.github.com/alpcanaydin/react-clean-table",
   "license": "MIT",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://www.github.com/alpcanaydin/react-clean-table"
+  },
   "keywords": [
-    "react-component"
+    "react-component",
+    "react-clean-table",
+    "react",
+    "table",
+    "react-table",
+    "simple",
+    "easy",
+    "clean"
   ]
 }
