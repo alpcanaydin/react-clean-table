@@ -244,6 +244,42 @@ const FullNameCell = ({ data }) => <span>{data[0]} {data[1]}</span>;
 </Table>
 ```
 
+### Column Styling
+If you want to add a className to speficied `<Column />` you can also use `tdClassName` prop in `<Column />` components. Both `tdClassName` props will be merged.
+
+```jsx
+const EmailCell = ({ data, showAs }) => <a href={`mailto:${data}`}>{showAs}</a>;
+
+const FullNameCell = ({ data }) => <span>{data[0]} {data[1]}</span>;
+
+<Table
+  data={data}
+  tdClassName="generic-td-class"
+/>
+  <Column
+    header="ID"
+    field="id"
+    tdClassName="speficied-td-class"
+  />
+  <Column
+    header="Full Name"
+    field={['firstName', 'lastName']}
+    cell={<FullNameCell />}
+  />
+  <Column
+    header="Email"
+    field="email"
+    cell={<EmailCell showAs="E-mail" />}
+  />
+</Table>
+
+/*
+Output for ID td:
+<td class="generic-td-class speficied-td-class">cell</td>
+*/
+```
+
+
 ### Data Accessing
 
 You can use **dot notation** in order to access to spesific data.
