@@ -3,7 +3,7 @@
 import React, { Element, PropTypes } from 'react';
 
 type PureCellPropsType = {
-  data: any
+  data?: any
 };
 
 const PureCell = (props: PureCellPropsType): Element<*> => {
