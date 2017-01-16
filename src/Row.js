@@ -2,7 +2,7 @@
 
 import React, { Element, PropTypes } from 'react';
 
-import { cellDataGenerator } from './utils';
+import { cellDataGenerator, classNameMerge } from './utils';
 
 import Column from './Column';
 import PureCell from './PureCell';
@@ -22,24 +22,24 @@ const Row = (props: RowPropsType): Element<*> => {
     tdClassName
   } = props;
 
-  const cells = React.Children.map(
+  const mappedColumns = React.Children.map(
     columns,
     (column: Element<Column>): Element<*> => {
-      const cell = column.props.cell || <PureCell data={{}} />;
-
-      return React.cloneElement(cell, {
+      const cell = React.cloneElement(column.props.cell || <PureCell />, {
         data: cellDataGenerator(data, column.props.field)
       });
+
+      return (
+        <td className={classNameMerge(tdClassName, column.props.tdClassName)}>
+          {cell}
+        </td>
+      );
     }
   );
 
   return (
     <tr className={trClassName}>
-      {cells.map((cell: Element<*>, key: number): Element<*> =>
-        <td key={key} className={tdClassName}>
-          {cell}
-        </td>
-      )}
+      {mappedColumns.map((column: Element<*>): Element<*> => column)}
     </tr>
   );
 };

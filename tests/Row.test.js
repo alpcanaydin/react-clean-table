@@ -55,6 +55,23 @@ describe('<Row />', () => {
     expect(wrapper.find('td').get(0).props.className).toEqual('tdClass');
   });
 
+  it('passes spesific tdClassName to <Column/> component', () => {
+    const data = {
+      key1: 'value 1'
+    };
+
+    const columns = [
+      <Column
+        field="key1"
+        header="Simple Header"
+        tdClassName="spesificClass"
+      />
+    ];
+
+    const wrapper = shallow(<Row data={data} columns={columns} tdClassName="tdClass" />);
+    expect(wrapper.find('td').get(0).props.className).toEqual('tdClass spesificClass');
+  });
+
   it('renders <td> element n times according to <Column /> components', () => {
     const data = {
       key1: 'value 1',

@@ -22,3 +22,17 @@ export const cellDataGenerator = (data: Object, fields?: string | Array<string>)
 
   return result;
 };
+
+export const classNameMerge = (...args: any): typeof undefined | string => {
+  if (!args) {
+    return undefined;
+  }
+
+  const classNames = args.filter((arg: typeof undefined | string): any => arg !== undefined);
+
+  if (!classNames.length) {
+    return undefined;
+  }
+
+  return classNames.join(' ');
+};

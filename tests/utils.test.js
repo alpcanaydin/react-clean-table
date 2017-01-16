@@ -1,6 +1,10 @@
 import expect from 'expect';
 
-import { stringToObject, cellDataGenerator } from '../src/utils';
+import {
+  stringToObject,
+  cellDataGenerator,
+  classNameMerge
+} from '../src/utils';
 
 describe('Utils', () => {
   describe('stringToObject', () => {
@@ -71,6 +75,23 @@ describe('Utils', () => {
 
       const result = cellDataGenerator(data, ['key1.key2.key3', 'key5.key6']);
       expect(result).toEqual(['value1', 'value3']);
+    });
+  });
+
+  describe('classNameMerge', () => {
+    it('returns undefined if args are undefined.', () => {
+      const merge = classNameMerge();
+      expect(merge).toBe(undefined);
+    });
+
+    it('ignores undefined values on merge', () => {
+      const merge = classNameMerge(undefined, 'class1', undefined);
+      expect(merge).toEqual('class1');
+    });
+
+    it('returns merged string for classes', () => {
+      const merge = classNameMerge('class1', 'class2', 'class3 class4');
+      expect(merge).toEqual('class1 class2 class3 class4');
     });
   });
 });
